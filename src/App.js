@@ -1,5 +1,10 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faIgloo } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faIgloo)
 
 class App extends Component {
   render() {
@@ -13,7 +18,7 @@ class App extends Component {
         </div>
         <section className='format-style squad'>
           <article>
-            <h1>Olá Mundo!!!</h1>
+            <h1>Olá Mundo!!! <FontAwesomeIcon icon="igloo" /></h1>
             <p>O objetivo deste HTML é ajudar a determinar as configurações normais (padrão) do estilo de texto e ter certeza de que todos os elementos HTML possíveis estão incluídos aqui, de modo a não perder quaisquer elementos ao projetar um site.</p>
             <hr />
             <h1>Cabeçalho 1</h1>
