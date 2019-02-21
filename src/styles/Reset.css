@@ -1,25 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700');.App {
-  text-align: center;
-}.App-logo {
-      -webkit-animation: App-logo-spin infinite 20s linear;
-              animation: App-logo-spin infinite 20s linear;
-      height: 80px;
-    }.App-header {
-      background-color: #222;
-      height: 150px;
-      padding: 20px;
-      color: white;
-    }.App-title {
-      font-size: 1.5em;
-    }.App-intro {
-      font-size: large; 
-    }@-webkit-keyframes App-logo-spin {
-  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
-}@keyframes App-logo-spin {
-  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
-}html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6,
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700');
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, a, abbr, address, cite, code, del,
 dfn, em, img, ins, kbd, q, s, samp, small, strong, sub,
 sup, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form,
@@ -29,39 +10,64 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
   border: 0;
   outline: 0;
   background: transparent;
-}*, *:before, *:after {
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-}::-webkit-scrollbar { display: none; }::-moz-scrollbar { display: none; }::-ms-scrollbar { display: none; }::-o-scrollbar { display: none; }::scrollbar { display: none; }html {
-  height: 100%; /* end body */
-}html body {
+}
+
+::-webkit-scrollbar { display: none; }
+::-moz-scrollbar { display: none; }
+::-ms-scrollbar { display: none; }
+::-o-scrollbar { display: none; }
+::scrollbar { display: none; }
+
+html {
+  height: 100%;
+
+  body {
     background: rgba(255, 255, 255, 1);
     color: #222;
     font-family: 'Open Sans', sans-serif;
     font-size: 100.01%;
     height: 100%;
     line-height: 1;
-    -webkit-text-size-adjust: 100%;
-       -moz-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-            text-size-adjust: 100%; /* end format-style */
-  }html body ol, html body ul {
+    text-size-adjust: 100%;
+
+    ol, ul {
       list-style: none;
-    }html body table {
+    }
+
+    table {
       border-collapse: collapse;
       border-spacing: 0;
       width: 100%;
-    }html body table th {
+      
+      th {
         font-weight:normal;
-      }html body label, html body button, html body input[type="submit"] {
+      }
+    }
+
+    label, button, input[type="submit"] {
       cursor:pointer;
-    }html body a, html body a:visited, html body a:active, html body a:focus {
+    }
+
+    a, a:visited, a:active, a:focus {
       text-decoration: none;
       color:#333;
       outline:none;
-    }html body a:hover {
+    }
+
+    a {
+      &:hover {
         text-decoration: none;
         color:#000;
-      }html body input, html body textarea, html body select {
+      }
+    }
+
+    input, textarea, select {
       border: 1px solid #eee;
       background: #fff;
       font-size: 14px;
@@ -72,128 +78,198 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
       font-family: 'Open Sans', sans-serif;
       height: 36px;
       outline: none;
-    }html body input::-webkit-input-placeholder {
+    }
+
+    input {
+      &::-webkit-input-placeholder {
         color:#00668C;
-      }html body input:-moz-placeholder {
+      }
+
+      &:-moz-placeholder {
         color:#00668C;
         opacity:1;
-      }html body input::-moz-placeholder {
+      }
+
+      &::-moz-placeholder {
         color:#00668C;
         opacity:1;
-      }html body input:-ms-input-placeholder {
+      }
+
+      &:-ms-input-placeholder {
         color:#00668C;
-      }html body textarea {
+      }
+    }
+
+    textarea {
       height:106px;
       padding: 10px;
       width:100%;
-    }html body textarea::-webkit-input-placeholder {
+
+      &::-webkit-input-placeholder {
         color:#00668C;
-      }html body textarea:-moz-placeholder {
+      }
+
+      &:-moz-placeholder {
         color:#00668C;
         opacity:1;
-      }html body textarea::-moz-placeholder {
+      }
+
+      &::-moz-placeholder {
         color:#00668C;
         opacity:1;
-      }html body textarea:-ms-input-placeholder {
+      }
+
+      &:-ms-input-placeholder {
         color:#00668C;
-      }html body select{
+      }
+    }
+
+    select{
       width: 100%; 
       cursor: pointer;
       border-radius:0 !important;
       padding:0 38px 0 10px;
-      -webkit-appearance: none;
-         -moz-appearance: none;
-              appearance: none;
+      appearance: none;
       text-indent: 0.01px;
       text-overflow: '';
       height: 50px;
       border: 1px solid #ddd;
       background: #fff;
       color: #555;
-    }html body select::-webkit-input-placeholder {
+
+      &::-webkit-input-placeholder {
         color:#00668C;
-      }html body select:-moz-placeholder {
+      }
+
+      &:-moz-placeholder {
         color:#00668C;
         opacity:1;
-      }html body select::-moz-placeholder {
+      }
+
+      &::-moz-placeholder {
         color:#00668C;
         opacity:1;
-      }html body select:-ms-input-placeholder {
+      }
+
+      &:-ms-input-placeholder {
         color:#00668C;
-      }html body select::-ms-expand {
+      }
+
+      &::-ms-expand {
         display: none;
-      }html body select:focus {
+      }
+
+      &:focus {
         outline: none;
-      }html body select option {
+      }
+
+      option {
         padding: 2px;
-      }html body span.clear {
+      }
+    }
+
+    span {
+      &.clear {
         display:block;
         clear:both;
         height: 0;
-      }html body span.space{
+      }
+
+      &.space{
         display:block;
         margin:10px 0;
         height:1px; clear:both;
-      }html body .transition, html body .transition:hover {
+      }
+    }
+
+    .transition, .transition:hover {
       -webkit-transition:all 0.3s ease-in ;
       -moz-transition:all 0.3s ease-in ;
       -ms-transition:all 0.3s ease-in ;
       -s-transition:all 0.3s ease-in ;
-    }html body ::-moz-selection {
+    }
+
+    ::selection {
       background: #333;
       color: #eee;
-    }::-moz-selection {
-      background: #333;
-      color: #eee;
-    }html body ::selection {
-      background: #333;
-      color: #eee;
-    }html body .clear:after{
+    }
+
+    .clear:after{
       content:'';
       display:block;
       clear:both;
-    }html body .pointer {
+    }
+
+    .pointer {
       cursor: pointer;
-    }html body .align-left {
+    }
+
+    .align-left {
       text-align:left;
-    }html body .align-right {
+    }
+
+    .align-right {
       text-align:right;
-    }html body .align-center {
+    }
+
+    .align-center {
       text-align:center;
-    }html body .align-justify {
+    }
+
+    .align-justify {
       text-align:justify;
-    }html body .float-right {
+    }
+
+    .float-right {
       float: right !important;
-    }html body .float-left {
+    }
+
+    .float-left {
       float: left !important;
-    }html body .center{
+    }
+
+    .center{
       display:block !important;
       margin-left:auto !important;
       margin-right:auto !important;
-    }html body .margin-top {
+    }
+
+    .margin-top {
       margin-top:2rem;
-    }html body .comum-color{
+    }
+
+    .comum-color{
       color:#666;
       text-shadow: 0 0 1px rgba(0,0,0, 0.2);
-    }html body .relative{
+    }
+
+    .relative{
       position:relative;
-    }html body .squad{
+    }
+
+    .squad{
       display:block;
       width:1280px;
       margin:0 auto;
-    }@media (max-width: 1336px) {html body .squad{
-        width:1170px
+
+      @media (max-width: 1336px) {
+        width:1170px;
+      }
+
+      @media (max-width: 1280px){
+        width:1000px;
+      }
+
+      @media (max-width: 1024px) {
+        width:760px;
+      }
+
+      @media (max-width: 820px) {
+        width:100%;
+      }
     }
-      }@media (max-width: 1280px){html body .squad{
-        width:1000px
-    }
-      }@media (max-width: 1024px) {html body .squad{
-        width:760px
-    }
-      }@media (max-width: 820px) {html body .squad{
-        width:100%
-    }
-      }html body .button {
+
+    .button {
       background: #222;
       color: #fff;
       font-family: 'Open Sans', sans-serif;
@@ -201,62 +277,107 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
       display: inline-block;
       margin: 1rem 0;
       padding: 10px 20px;
-    }html body .button i {
+
+      i {
         margin: 0 5px;
-      }html body .format-style { /* end article */
-    }html body .format-style article h1, html body .format-style article h2, html body .format-style article h3, html body .format-style article h4, html body .format-style article h5, html body .format-style article h6 {
+      }
+    }
+
+    .format-style {
+      article {
+        h1, h2, h3, h4, h5, h6 {
           line-height: 70px;
           font-weight:bold;
           font-family: 'Open Sans', sans-serif;
-        }html body .format-style article h1 {
+        }
+
+        h1 {
           font-size: 45px;
-        }html body .format-style article h2 {
+        }
+
+        h2 {
           font-size: 38px;
-        }html body .format-style article h3 {
+        }
+
+        h3 {
           font-size: 32px;
-        }html body .format-style article h4 {
+        }
+
+        h4 {
           font-size: 27px;
-        }html body .format-style article h5 {
+        }
+
+        h5 {
           font-size: 25px;
-        }html body .format-style article h6 {
+        }
+
+        h6 {
           font-size: 23px;
-        }html body .format-style article hr {
+        }
+
+        hr {
           margin:30px 0;
-        }html body .format-style article a {
+        }
+
+        a {
           text-decoration:underline;
           font-family: 'Open Sans', sans-serif;
           font-weight: bold;
-        }html body .format-style article p, html body .format-style article dd {
+        }
+
+        p, dd {
           line-height:25px;
           margin-bottom:25px;
           font-size:14px;
-        }html body .format-style article dt {
+        }
+
+        dt {
           font-size: 18px;
           line-height: 25px;
           font-weight:bold;
           font-family: 'Open Sans', sans-serif;
-        }html body .format-style article ul, html body .format-style article ol {
+        }
+
+        ul, ol {
           margin-left:20px;
-        }html body .format-style article ul li {
+        }
+
+        ul {
+          li {
             list-style:disc;
             line-height:20px;
-          }html body .format-style article ol li {
+          }
+        }
+
+        ol {
+          li {
             list-style:decimal;
             line-height:20px;
-          }html body .format-style article fieldset {
+          }
+        }
+
+        fieldset {
           border: 1px solid rgba(0, 0, 0, 0.1);
           margin: 0 0 24px;
           padding: 11px 12px;
-        }html body .format-style article label {
+        }
+
+        label {
           margin-bottom: 15px;
           display: block;
-        }html body .format-style article input[type="radio"],
-        html body .format-style article input[type="checkbox"] {
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
           width:auto;
           height:auto
-        }html body .format-style article input, html body .format-style article textarea, html body .format-style article select {
+        }
+
+        input, textarea, select {
           margin-top: 5px;
-        }html body .format-style article button, html body .format-style article input.button {
+        }
+
+        button, input.button {
           padding:10px 20px;
           width:inherit;
           text-transform:uppercase;
@@ -266,17 +387,29 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
           outline:none;
           border: 1px solid rgba(0,0,0,0.4);
           height: auto;
-        }html body .format-style article table td, html body .format-style article table th {
+        }
+
+        table {
+          td, th {
             border:1px solid rgba(0, 0, 0, 0.1);
             padding:10px;
-          }html body .format-style article table td {
+          }
+
+          td {
             font-size:14px;
-          }html body .format-style article table th {
+          }
+
+          th {
             text-transform:uppercase;
             font-family: 'Open Sans', sans-serif;
             text-align:left;
-          }html body .format-style article pre{
+          }
+        }
+
+        pre{
           border: 1px solid rgba(0, 0, 0, 0.1);
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
           box-sizing: border-box;
           margin-bottom: 24px;
           max-width: 100%;
@@ -286,7 +419,9 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
           white-space: pre;
           white-space: pre-wrap;
           word-wrap: break-word;
-        }html body .format-style article blockquote{
+        }
+
+        blockquote{
           position: relative;
           padding: 30px 64px 10px;
           font-size: 34px;
@@ -295,7 +430,8 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
           font-style: italic;
           font-family: 'Open Sans', sans-serif;
           text-shadow: 4px 4px rgba(197, 197, 197, 0.07);
-        }html body .format-style article blockquote:before{
+
+          &:before{
             content:'\f10d';
             position:absolute;
             top:11px;
@@ -306,7 +442,9 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
             -moz-transform:rotate(11deg);
             -ms-transform:rotate(11deg);
             -o-transform:rotate(11deg);
-          }html body .format-style article blockquote:after{
+          }
+
+          &:after{
             content:'\f10e';
             position:absolute;
             bottom:11px;
@@ -317,10 +455,19 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
             -moz-transform:rotate(11deg);
             -ms-transform:rotate(11deg);
             -o-transform:rotate(11deg);
-            }html body .format-style article blockquote * {
+            }
+
+          * {
             color: #D7D6D6;
             line-height: 40px;
-          }html body .format-style article strong {
+          }
+        }
+
+        strong {
           font-family: 'Open Sans', sans-serif;
           font-weight: bold;
-        }/* end html */
+        }
+      } /* end article */
+    } /* end format-style */
+  } /* end body */
+} /* end html */
