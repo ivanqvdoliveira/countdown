@@ -1,25 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700');.App {
-  text-align: center;
-}.App-logo {
-      -webkit-animation: App-logo-spin infinite 20s linear;
-              animation: App-logo-spin infinite 20s linear;
-      height: 80px;
-    }.App-header {
-      background-color: #222;
-      height: 150px;
-      padding: 20px;
-      color: white;
-    }.App-title {
-      font-size: 1.5em;
-    }.App-intro {
-      font-size: large; 
-    }@-webkit-keyframes App-logo-spin {
-  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
-}@keyframes App-logo-spin {
-  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
-  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
-}html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6,
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700');
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, a, abbr, address, cite, code, del,
 dfn, em, img, ins, kbd, q, s, samp, small, strong, sub,
 sup, var, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form,
@@ -29,11 +10,27 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
   border: 0;
   outline: 0;
   background: transparent;
-}*, *:before, *:after {
+}
+
+*, *:before, *:after {
   box-sizing: border-box;
-}::-webkit-scrollbar { display: none; }::-moz-scrollbar { display: none; }::-ms-scrollbar { display: none; }::-o-scrollbar { display: none; }::scrollbar { display: none; }html {
+}
+
+::-webkit-scrollbar { display: none; }
+
+::-moz-scrollbar { display: none; }
+
+::-ms-scrollbar { display: none; }
+
+::-o-scrollbar { display: none; }
+
+::scrollbar { display: none; }
+
+html {
   height: 100%; /* end body */
-}html body {
+}
+
+html body {
     background: rgba(255, 255, 255, 1);
     color: #222;
     font-family: 'Open Sans', sans-serif;
@@ -44,24 +41,38 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
        -moz-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;
             text-size-adjust: 100%; /* end format-style */
-  }html body ol, html body ul {
+  }
+
+html body ol, html body ul {
       list-style: none;
-    }html body table {
+    }
+
+html body table {
       border-collapse: collapse;
       border-spacing: 0;
       width: 100%;
-    }html body table th {
+    }
+
+html body table th {
         font-weight:normal;
-      }html body label, html body button, html body input[type="submit"] {
+      }
+
+html body label, html body button, html body input[type="submit"] {
       cursor:pointer;
-    }html body a, html body a:visited, html body a:active, html body a:focus {
+    }
+
+html body a, html body a:visited, html body a:active, html body a:focus {
       text-decoration: none;
       color:#333;
       outline:none;
-    }html body a:hover {
+    }
+
+html body a:hover {
         text-decoration: none;
         color:#000;
-      }html body input, html body textarea, html body select {
+      }
+
+html body input, html body textarea, html body select {
       border: 1px solid #eee;
       background: #fff;
       font-size: 14px;
@@ -72,31 +83,51 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
       font-family: 'Open Sans', sans-serif;
       height: 36px;
       outline: none;
-    }html body input::-webkit-input-placeholder {
-        color:#00668C;
-      }html body input:-moz-placeholder {
-        color:#00668C;
+    }
+
+html body input::-webkit-input-placeholder {
+        color:#222;
+      }
+
+html body input:-moz-placeholder {
+        color:#222;
         opacity:1;
-      }html body input::-moz-placeholder {
-        color:#00668C;
+      }
+
+html body input::-moz-placeholder {
+        color:#222;
         opacity:1;
-      }html body input:-ms-input-placeholder {
-        color:#00668C;
-      }html body textarea {
+      }
+
+html body input:-ms-input-placeholder {
+        color:#222;
+      }
+
+html body textarea {
       height:106px;
       padding: 10px;
       width:100%;
-    }html body textarea::-webkit-input-placeholder {
-        color:#00668C;
-      }html body textarea:-moz-placeholder {
-        color:#00668C;
+    }
+
+html body textarea::-webkit-input-placeholder {
+        color:#222;
+      }
+
+html body textarea:-moz-placeholder {
+        color:#222;
         opacity:1;
-      }html body textarea::-moz-placeholder {
-        color:#00668C;
+      }
+
+html body textarea::-moz-placeholder {
+        color:#222;
         opacity:1;
-      }html body textarea:-ms-input-placeholder {
-        color:#00668C;
-      }html body select{
+      }
+
+html body textarea:-ms-input-placeholder {
+        color:#222;
+      }
+
+html body select{
       width: 100%; 
       cursor: pointer;
       border-radius:0 !important;
@@ -110,153 +141,266 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
       border: 1px solid #ddd;
       background: #fff;
       color: #555;
-    }html body select::-webkit-input-placeholder {
-        color:#00668C;
-      }html body select:-moz-placeholder {
-        color:#00668C;
+    }
+
+html body select::-webkit-input-placeholder {
+        color:#222;
+      }
+
+html body select:-moz-placeholder {
+        color:#222;
         opacity:1;
-      }html body select::-moz-placeholder {
-        color:#00668C;
+      }
+
+html body select::-moz-placeholder {
+        color:#222;
         opacity:1;
-      }html body select:-ms-input-placeholder {
-        color:#00668C;
-      }html body select::-ms-expand {
+      }
+
+html body select:-ms-input-placeholder {
+        color:#222;
+      }
+
+html body select::-ms-expand {
         display: none;
-      }html body select:focus {
+      }
+
+html body select:focus {
         outline: none;
-      }html body select option {
+      }
+
+html body select option {
         padding: 2px;
-      }html body span.clear {
+      }
+
+html body span.clear {
         display:block;
         clear:both;
         height: 0;
-      }html body span.space{
+      }
+
+html body span.space{
         display:block;
         margin:10px 0;
         height:1px; clear:both;
-      }html body .transition, html body .transition:hover {
+      }
+
+html body .transition, html body .transition:hover {
       -webkit-transition:all 0.3s ease-in ;
       -moz-transition:all 0.3s ease-in ;
       -ms-transition:all 0.3s ease-in ;
       -s-transition:all 0.3s ease-in ;
-    }html body ::-moz-selection {
+    }
+
+html body ::-moz-selection {
       background: #333;
       color: #eee;
-    }::-moz-selection {
+    }
+
+::-moz-selection {
       background: #333;
       color: #eee;
-    }html body ::selection {
+    }
+
+html body ::selection {
       background: #333;
       color: #eee;
-    }html body .clear:after{
+    }
+
+html body .clear:after{
       content:'';
       display:block;
       clear:both;
-    }html body .pointer {
+    }
+
+html body .pointer {
       cursor: pointer;
-    }html body .align-left {
+    }
+
+html body .align-left {
       text-align:left;
-    }html body .align-right {
+    }
+
+html body .align-right {
       text-align:right;
-    }html body .align-center {
+    }
+
+html body .align-center {
       text-align:center;
-    }html body .align-justify {
+    }
+
+html body .align-justify {
       text-align:justify;
-    }html body .float-right {
+    }
+
+html body .float-right {
       float: right !important;
-    }html body .float-left {
+    }
+
+html body .float-left {
       float: left !important;
-    }html body .center{
+    }
+
+html body .center{
       display:block !important;
       margin-left:auto !important;
       margin-right:auto !important;
-    }html body .margin-top {
+    }
+
+html body .margin-top {
       margin-top:2rem;
-    }html body .comum-color{
+    }
+
+html body .comum-color{
       color:#666;
       text-shadow: 0 0 1px rgba(0,0,0, 0.2);
-    }html body .relative{
+    }
+
+html body .relative{
       position:relative;
-    }html body .squad{
+    }
+
+html body .squad{
       display:block;
       width:1280px;
       margin:0 auto;
-    }@media (max-width: 1336px) {html body .squad{
+    }
+
+@media (max-width: 1336px) {
+
+html body .squad{
         width:1170px
     }
-      }@media (max-width: 1280px){html body .squad{
+      }
+
+@media (max-width: 1280px){
+
+html body .squad{
         width:1000px
     }
-      }@media (max-width: 1024px) {html body .squad{
+      }
+
+@media (max-width: 1024px) {
+
+html body .squad{
         width:760px
     }
-      }@media (max-width: 820px) {html body .squad{
+      }
+
+@media (max-width: 820px) {
+
+html body .squad{
         width:100%
     }
-      }html body .button {
+      }
+
+html body .button {
       background: #222;
+      border: none;
       color: #fff;
       font-family: 'Open Sans', sans-serif;
       font-size: 20px;
       display: inline-block;
       margin: 1rem 0;
       padding: 10px 20px;
-    }html body .button i {
+    }
+
+html body .button i {
         margin: 0 5px;
-      }html body .format-style { /* end article */
-    }html body .format-style article h1, html body .format-style article h2, html body .format-style article h3, html body .format-style article h4, html body .format-style article h5, html body .format-style article h6 {
+      }
+
+html body .format-style { /* end article */
+    }
+
+html body .format-style article h1, html body .format-style article h2, html body .format-style article h3, html body .format-style article h4, html body .format-style article h5, html body .format-style article h6 {
           line-height: 70px;
           font-weight:bold;
           font-family: 'Open Sans', sans-serif;
-        }html body .format-style article h1 {
+        }
+
+html body .format-style article h1 {
           font-size: 45px;
-        }html body .format-style article h2 {
+        }
+
+html body .format-style article h2 {
           font-size: 38px;
-        }html body .format-style article h3 {
+        }
+
+html body .format-style article h3 {
           font-size: 32px;
-        }html body .format-style article h4 {
+        }
+
+html body .format-style article h4 {
           font-size: 27px;
-        }html body .format-style article h5 {
+        }
+
+html body .format-style article h5 {
           font-size: 25px;
-        }html body .format-style article h6 {
+        }
+
+html body .format-style article h6 {
           font-size: 23px;
-        }html body .format-style article hr {
+        }
+
+html body .format-style article hr {
           margin:30px 0;
-        }html body .format-style article a {
+        }
+
+html body .format-style article a {
           text-decoration:underline;
           font-family: 'Open Sans', sans-serif;
           font-weight: bold;
-        }html body .format-style article p, html body .format-style article dd {
+        }
+
+html body .format-style article p, html body .format-style article dd {
           line-height:25px;
           margin-bottom:25px;
           font-size:14px;
-        }html body .format-style article dt {
+        }
+
+html body .format-style article dt {
           font-size: 18px;
           line-height: 25px;
           font-weight:bold;
           font-family: 'Open Sans', sans-serif;
-        }html body .format-style article ul, html body .format-style article ol {
+        }
+
+html body .format-style article ul, html body .format-style article ol {
           margin-left:20px;
-        }html body .format-style article ul li {
+        }
+
+html body .format-style article ul li {
             list-style:disc;
             line-height:20px;
-          }html body .format-style article ol li {
+          }
+
+html body .format-style article ol li {
             list-style:decimal;
             line-height:20px;
-          }html body .format-style article fieldset {
+          }
+
+html body .format-style article fieldset {
           border: 1px solid rgba(0, 0, 0, 0.1);
           margin: 0 0 24px;
           padding: 11px 12px;
-        }html body .format-style article label {
+        }
+
+html body .format-style article label {
           margin-bottom: 15px;
           display: block;
-        }html body .format-style article input[type="radio"],
+        }
+
+html body .format-style article input[type="radio"],
         html body .format-style article input[type="checkbox"] {
           width:auto;
           height:auto
-        }html body .format-style article input, html body .format-style article textarea, html body .format-style article select {
+        }
+
+html body .format-style article input, html body .format-style article textarea, html body .format-style article select {
           margin-top: 5px;
-        }html body .format-style article button, html body .format-style article input.button {
+        }
+
+html body .format-style article button, html body .format-style article input.button {
           padding:10px 20px;
           width:inherit;
           text-transform:uppercase;
@@ -266,16 +410,24 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
           outline:none;
           border: 1px solid rgba(0,0,0,0.4);
           height: auto;
-        }html body .format-style article table td, html body .format-style article table th {
+        }
+
+html body .format-style article table td, html body .format-style article table th {
             border:1px solid rgba(0, 0, 0, 0.1);
             padding:10px;
-          }html body .format-style article table td {
+          }
+
+html body .format-style article table td {
             font-size:14px;
-          }html body .format-style article table th {
+          }
+
+html body .format-style article table th {
             text-transform:uppercase;
             font-family: 'Open Sans', sans-serif;
             text-align:left;
-          }html body .format-style article pre{
+          }
+
+html body .format-style article pre{
           border: 1px solid rgba(0, 0, 0, 0.1);
           box-sizing: border-box;
           margin-bottom: 24px;
@@ -286,7 +438,9 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
           white-space: pre;
           white-space: pre-wrap;
           word-wrap: break-word;
-        }html body .format-style article blockquote{
+        }
+
+html body .format-style article blockquote{
           position: relative;
           padding: 30px 64px 10px;
           font-size: 34px;
@@ -295,7 +449,9 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
           font-style: italic;
           font-family: 'Open Sans', sans-serif;
           text-shadow: 4px 4px rgba(197, 197, 197, 0.07);
-        }html body .format-style article blockquote:before{
+        }
+
+html body .format-style article blockquote:before{
             content:'\f10d';
             position:absolute;
             top:11px;
@@ -306,7 +462,9 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
             -moz-transform:rotate(11deg);
             -ms-transform:rotate(11deg);
             -o-transform:rotate(11deg);
-          }html body .format-style article blockquote:after{
+          }
+
+html body .format-style article blockquote:after{
             content:'\f10e';
             position:absolute;
             bottom:11px;
@@ -317,10 +475,120 @@ label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
             -moz-transform:rotate(11deg);
             -ms-transform:rotate(11deg);
             -o-transform:rotate(11deg);
-            }html body .format-style article blockquote * {
+            }
+
+html body .format-style article blockquote * {
             color: #D7D6D6;
             line-height: 40px;
-          }html body .format-style article strong {
+          }
+
+html body .format-style article strong {
           font-family: 'Open Sans', sans-serif;
           font-weight: bold;
-        }/* end html */
+        }
+
+/* end html */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+      -webkit-animation: App-logo-spin infinite 20s linear;
+              animation: App-logo-spin infinite 20s linear;
+      height: 80px;
+    }
+
+.App-header {
+      background-color: #222;
+      height: 150px;
+      padding: 20px;
+      color: white;
+    }
+
+.App-title {
+      font-size: 1.5em;
+    }
+
+.App-intro {
+      font-size: large; 
+    }
+
+@-webkit-keyframes App-logo-spin {
+  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@keyframes App-logo-spin {
+  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+nav ul {
+    text-align: center;
+  }
+
+nav ul li {
+      display: inline-block;
+      margin: 10px 10px 2px;
+    }
+
+nav ul li a {
+        background-color: #222;
+        color: #eee !important;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 10px 20px;
+      }
+
+form {
+  margin-top: 50px;
+  max-width: 700px;
+}
+
+form input {
+    margin-bottom: 20px;
+  }
+
+.modal {
+  display: block;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+  width: 100%;
+  z-index: 10;
+}
+
+.modal .modal-content {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .3);
+    border-radius: 5px;
+    display: block;
+    padding: 20px;
+    position: fixed;
+    top: calc(50% - 40%);
+    left:  calc(50% - 35%);
+    max-height: 80%;
+    overflow: auto;
+    width: 70%;
+    z-index: 100;
+  }
+
+.modal .modal-content i.fas {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 20px;
+        z-index: 20;
+        cursor: pointer;
+      }
+
+.modal .modal-content h3{
+      border-bottom: 1px solid;
+      font-weight: bold;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }

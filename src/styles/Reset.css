@@ -82,21 +82,21 @@ html {
 
     input {
       &::-webkit-input-placeholder {
-        color:#00668C;
+        color:#222;
       }
 
       &:-moz-placeholder {
-        color:#00668C;
+        color:#222;
         opacity:1;
       }
 
       &::-moz-placeholder {
-        color:#00668C;
+        color:#222;
         opacity:1;
       }
 
       &:-ms-input-placeholder {
-        color:#00668C;
+        color:#222;
       }
     }
 
@@ -106,21 +106,21 @@ html {
       width:100%;
 
       &::-webkit-input-placeholder {
-        color:#00668C;
+        color:#222;
       }
 
       &:-moz-placeholder {
-        color:#00668C;
+        color:#222;
         opacity:1;
       }
 
       &::-moz-placeholder {
-        color:#00668C;
+        color:#222;
         opacity:1;
       }
 
       &:-ms-input-placeholder {
-        color:#00668C;
+        color:#222;
       }
     }
 
@@ -138,21 +138,21 @@ html {
       color: #555;
 
       &::-webkit-input-placeholder {
-        color:#00668C;
+        color:#222;
       }
 
       &:-moz-placeholder {
-        color:#00668C;
+        color:#222;
         opacity:1;
       }
 
       &::-moz-placeholder {
-        color:#00668C;
+        color:#222;
         opacity:1;
       }
 
       &:-ms-input-placeholder {
-        color:#00668C;
+        color:#222;
       }
 
       &::-ms-expand {
@@ -271,6 +271,7 @@ html {
 
     .button {
       background: #222;
+      border: none;
       color: #fff;
       font-family: 'Open Sans', sans-serif;
       font-size: 20px;
