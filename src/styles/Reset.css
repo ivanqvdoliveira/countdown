@@ -98,6 +98,13 @@ html {
       &:-ms-input-placeholder {
         color:#222;
       }
+
+      &[type='radio'],
+      &[type='checkbox'] {
+        width: auto;
+        vertical-align: middle;
+        margin: 0 3px 0 10px;
+      }
     }
 
     textarea {
