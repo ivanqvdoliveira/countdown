@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700');
 
+:root {
+  --color-default-222: #222;
+  --color-default-333: #333;
+  --color-default-FFF: rgba(255, 255, 255, 1);
+  --comum-color: #666;
+}
+
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, a, abbr, address, cite, code, del,
 dfn, em, img, ins, kbd, q, s, samp, small, strong, sub,
@@ -32,7 +39,9 @@ html {
 
 html body {
     background: rgba(255, 255, 255, 1);
+    background: var(--color-default-FFF);
     color: #222;
+    color: var(--color-default-222);
     font-family: 'Open Sans', sans-serif;
     font-size: 100.01%;
     height: 100%;
@@ -64,6 +73,7 @@ html body label, html body button, html body input[type="submit"] {
 html body a, html body a:visited, html body a:active, html body a:focus {
       text-decoration: none;
       color:#333;
+      color:var(--color-default-333);
       outline:none;
     }
 
@@ -74,12 +84,14 @@ html body a:hover {
 
 html body input, html body textarea, html body select {
       border: 1px solid #eee;
-      background: #fff;
+      background: rgba(255, 255, 255, 1);
+      background: var(--color-default-FFF);
       font-size: 14px;
       outline: none;
       width: 100%;
       padding: 0 10px 0 10px;
       color: #666;
+      color: var(--comum-color);
       font-family: 'Open Sans', sans-serif;
       height: 36px;
       outline: none;
@@ -87,20 +99,31 @@ html body input, html body textarea, html body select {
 
 html body input::-webkit-input-placeholder {
         color:#222;
+        color:var(--color-default-222);
       }
 
 html body input:-moz-placeholder {
         color:#222;
+        color:var(--color-default-222);
         opacity:1;
       }
 
 html body input::-moz-placeholder {
         color:#222;
+        color:var(--color-default-222);
         opacity:1;
       }
 
 html body input:-ms-input-placeholder {
         color:#222;
+        color:var(--color-default-222);
+      }
+
+html body input[type='radio'],
+      html body input[type='checkbox'] {
+        width: auto;
+        vertical-align: middle;
+        margin: 0 3px 0 10px;
       }
 
 html body textarea {
@@ -111,20 +134,24 @@ html body textarea {
 
 html body textarea::-webkit-input-placeholder {
         color:#222;
+        color:var(--color-default-222);
       }
 
 html body textarea:-moz-placeholder {
         color:#222;
+        color:var(--color-default-222);
         opacity:1;
       }
 
 html body textarea::-moz-placeholder {
         color:#222;
+        color:var(--color-default-222);
         opacity:1;
       }
 
 html body textarea:-ms-input-placeholder {
         color:#222;
+        color:var(--color-default-222);
       }
 
 html body select{
@@ -139,26 +166,31 @@ html body select{
       text-overflow: '';
       height: 50px;
       border: 1px solid #ddd;
-      background: #fff;
+      background: rgba(255, 255, 255, 1);
+      background: var(--color-default-FFF);
       color: #555;
     }
 
 html body select::-webkit-input-placeholder {
         color:#222;
+        color:var(--color-default-222);
       }
 
 html body select:-moz-placeholder {
         color:#222;
+        color:var(--color-default-222);
         opacity:1;
       }
 
 html body select::-moz-placeholder {
         color:#222;
+        color:var(--color-default-222);
         opacity:1;
       }
 
 html body select:-ms-input-placeholder {
         color:#222;
+        color:var(--color-default-222);
       }
 
 html body select::-ms-expand {
@@ -194,16 +226,19 @@ html body .transition, html body .transition:hover {
 
 html body ::-moz-selection {
       background: #333;
+      background: var(--color-default-333);
       color: #eee;
     }
 
 ::-moz-selection {
       background: #333;
+      background: var(--color-default-333);
       color: #eee;
     }
 
 html body ::selection {
       background: #333;
+      background: var(--color-default-333);
       color: #eee;
     }
 
@@ -252,7 +287,8 @@ html body .margin-top {
     }
 
 html body .comum-color{
-      color:#666;
+      color: #666;
+      color: var(--comum-color);
       text-shadow: 0 0 1px rgba(0,0,0, 0.2);
     }
 
@@ -296,8 +332,10 @@ html body .squad{
 
 html body .button {
       background: #222;
+      background: var(--color-default-222);
       border: none;
-      color: #fff;
+      color: rgba(255, 255, 255, 1);
+      color: var(--color-default-FFF);
       font-family: 'Open Sans', sans-serif;
       font-size: 20px;
       display: inline-block;
@@ -501,6 +539,7 @@ html body .format-style article strong {
 
 .App-header {
       background-color: #222;
+      background-color: var(--color-default-222);
       height: 150px;
       padding: 20px;
       color: white;
@@ -550,6 +589,81 @@ form {
 form input {
     margin-bottom: 20px;
   }
+
+.grid {
+  padding: 40px;
+}
+
+.grid.container {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    grid-gap: 1rem;
+  }
+
+.grid.container > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 3px;
+      background-color: #557cf2;
+      font: 50px Helvetica, san-serif;
+      color: #fff;
+    }
+
+.grid.container > div.item2 {
+       grid-column-start: 2;
+       grid-column-end: 4;
+      }
+
+.grid.container > div.item3 {
+        grid-row-start: 2;
+        grid-row-end: 4;
+      }
+
+.grid.container > div.item6 {
+        grid-column-start: 2;
+        grid-column-end: 4;
+      }
+
+.grid.mosaico {
+    display: grid;
+    grid-template-columns: 33.3333% 33.3333% 33.3333%;
+    grid-template-rows: 200px 200px 200px;
+    grid-gap: 1px;
+  }
+
+.grid.mosaico > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font: 50px Helvetica, san-serif;
+      color: #fff;
+    }
+
+.grid.mosaico > div img {
+        width: 100%;
+        -o-object-fit: cover;
+           object-fit: cover;
+        -o-object-position: center;
+           object-position: center;
+        height: 100%;
+      }
+
+.grid.mosaico > div.item2 {
+       grid-column-start: 2;
+       grid-column-end: 4;
+      }
+
+.grid.mosaico > div.item3 {
+        grid-row-start: 2;
+        grid-row-end: 4;
+      }
+
+.grid.mosaico > div.item6 {
+        grid-column-start: 2;
+        grid-column-end: 4;
+      }
 
 .modal {
   display: block;
