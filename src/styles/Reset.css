@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700');
 
+:root {
+  --color-default-222: #222;
+  --color-default-333: #333;
+  --color-default-FFF: rgba(255, 255, 255, 1);
+  --comum-color: #666;
+}
+
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, a, abbr, address, cite, code, del,
 dfn, em, img, ins, kbd, q, s, samp, small, strong, sub,
@@ -28,8 +35,8 @@ html {
   height: 100%;
 
   body {
-    background: rgba(255, 255, 255, 1);
-    color: #222;
+    background: var(--color-default-FFF);
+    color: var(--color-default-222);
     font-family: 'Open Sans', sans-serif;
     font-size: 100.01%;
     height: 100%;
@@ -56,7 +63,7 @@ html {
 
     a, a:visited, a:active, a:focus {
       text-decoration: none;
-      color:#333;
+      color:var(--color-default-333);
       outline:none;
     }
 
@@ -69,12 +76,12 @@ html {
 
     input, textarea, select {
       border: 1px solid #eee;
-      background: #fff;
+      background: var(--color-default-FFF);
       font-size: 14px;
       outline: none;
       width: 100%;
       padding: 0 10px 0 10px;
-      color: #666;
+      color: var(--comum-color);
       font-family: 'Open Sans', sans-serif;
       height: 36px;
       outline: none;
@@ -82,21 +89,21 @@ html {
 
     input {
       &::-webkit-input-placeholder {
-        color:#222;
+        color:var(--color-default-222);
       }
 
       &:-moz-placeholder {
-        color:#222;
+        color:var(--color-default-222);
         opacity:1;
       }
 
       &::-moz-placeholder {
-        color:#222;
+        color:var(--color-default-222);
         opacity:1;
       }
 
       &:-ms-input-placeholder {
-        color:#222;
+        color:var(--color-default-222);
       }
 
       &[type='radio'],
@@ -113,21 +120,21 @@ html {
       width:100%;
 
       &::-webkit-input-placeholder {
-        color:#222;
+        color:var(--color-default-222);
       }
 
       &:-moz-placeholder {
-        color:#222;
+        color:var(--color-default-222);
         opacity:1;
       }
 
       &::-moz-placeholder {
-        color:#222;
+        color:var(--color-default-222);
         opacity:1;
       }
 
       &:-ms-input-placeholder {
-        color:#222;
+        color:var(--color-default-222);
       }
     }
 
@@ -141,25 +148,25 @@ html {
       text-overflow: '';
       height: 50px;
       border: 1px solid #ddd;
-      background: #fff;
+      background: var(--color-default-FFF);
       color: #555;
 
       &::-webkit-input-placeholder {
-        color:#222;
+        color:var(--color-default-222);
       }
 
       &:-moz-placeholder {
-        color:#222;
+        color:var(--color-default-222);
         opacity:1;
       }
 
       &::-moz-placeholder {
-        color:#222;
+        color:var(--color-default-222);
         opacity:1;
       }
 
       &:-ms-input-placeholder {
-        color:#222;
+        color:var(--color-default-222);
       }
 
       &::-ms-expand {
@@ -197,7 +204,7 @@ html {
     }
 
     ::selection {
-      background: #333;
+      background: var(--color-default-333);
       color: #eee;
     }
 
@@ -246,7 +253,7 @@ html {
     }
 
     .comum-color{
-      color:#666;
+      color: var(--comum-color);
       text-shadow: 0 0 1px rgba(0,0,0, 0.2);
     }
 
@@ -277,9 +284,9 @@ html {
     }
 
     .button {
-      background: #222;
+      background: var(--color-default-222);
       border: none;
-      color: #fff;
+      color: var(--color-default-FFF);
       font-family: 'Open Sans', sans-serif;
       font-size: 20px;
       display: inline-block;
@@ -465,7 +472,7 @@ html {
             -o-transform:rotate(11deg);
             }
 
-          * {
+          & * {
             color: #D7D6D6;
             line-height: 40px;
           }
