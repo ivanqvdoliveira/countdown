@@ -1,178 +1,277 @@
-import React from 'react';
+import React, { Component } from 'react';
+import moment from 'moment'
+import weddingList from './utils/weddingList'
+import styled from 'styled-components'
 
-const Home = () => {
-  return (
-    <div>
-      <div>
-        <section className='format-style squad'>
-          <article>
-            <h1>Olá Mundo!!! <i className="fas fa-igloo" /></h1>
-            <p>O objetivo deste HTML é ajudar a determinar as configurações normais (padrão) do estilo de texto e ter certeza de que todos os elementos HTML possíveis estão incluídos aqui, de modo a não perder quaisquer elementos ao projetar um site.</p>
-            <hr />
-            <h1>Cabeçalho 1</h1>
-            <h2>Cabeçalho 2</h2>
-            <h3>Cabeçalho 3</h3>
-            <h4>Cabeçalho 4</h4>
-            <h5>Cabeçalho 5</h5>
-            <h6>Cabeçalho 6</h6>
-            <hr />
-            <h2>Paragrafo</h2>
-            <p>Lorem ipsum dolor sit amet, <a href='' title='test link'>test link</a> adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <a href='' title='test link'>Estilo de link</a>. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
-            <p>Lorem ipsum dolor sit amet, <em>Enfase</em> consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.</p>
-            <hr />
-            <h2>Tipo de Lista</h2>
-            <h3>Definição de lista</h3>
-            <dl>
-              <dt>Título da lista de definição</dt>
-              <dd>Divisório da lista de definição.</dd>
-            </dl>
-            <h3>Lista Ordenada</h3>
-            <ol>
-              <li>Item de lista 1</li>
-              <li>Item de lista 2</li>
-              <li>Item de lista 3</li>
-            </ol>
-            <h3>Lista desordenada</h3>
-            <ul>
-              <li>Item de lista 1</li>
-              <li>Item de lista 2</li>
-              <li>Item de lista 3</li>
-            </ul>
-            <hr />
-            <h2>Formulários</h2>
-            <fieldset>
-              <legend>Legenda</legend>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
-              <form>
-                <h2>Elementos de formulários</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui.</p>
-                <label>Campo de texto
-                  <input type='text'/>
-                </label>
-                <label>Área de Texto
-                  <textarea></textarea>
-                </label>
-                <label>Elemento de seleção
-                  <select>
-                    <optgroup label='Option Group 1'>
-                      <option value='1'>
-                        Opção 1
-                      </option>
-                      <option value='2'>
-                        Opção 2
-                      </option>
-                      <option value='3'>
-                        Opção 3
-                      </option>
-                    </optgroup>
-                    <optgroup label='Option Group 2'>
-                      <option value='1'>
-                        Opção 1
-                      </option>
-                      <option value='2'>
-                        Opção 2
-                      </option>
-                      <option value='3'>
-                        Opção 3
-                      </option>
-                    </optgroup>
-                  </select>
-                </label>
-                <label>Botões radio:</label>
-                <label className='input-radio'>
-                  <input type='radio' className='radio' name='radio_button' value='radio_1' /> Radio 1
-                </label>
-                <label className='input-radio'>
-                  <input type='radio' className='radio' name='radio_button' value='radio_2' /> Radio 2
-                </label>
-                <label className='input-radio'>
-                  <input type='radio' className='radio' name='radio_button' value='radio_3' /> Radio 3
-                </label>
-                <label>Checkboxes:</label>
-                <label className='input-checkbox'>
-                  <input type='checkbox' className='checkbox' name='checkboxes' value='check_1' /> Checkbox 1
-                </label>
-                <label className='input-checkbox'>
-                  <input type='checkbox' className='checkbox' name='checkboxes' value='check_2' /> Checkbox 2
-                </label>
-                <label className='input-checkbox'>
-                  <input type='checkbox' className='checkbox' name='checkboxes' value='check_3' /> Checkbox 3
-                </label>
-                <label>Senhas:
-                  <input type='password' className='password' name='password' />
-                </label>
-                <label>Campo de arquivo:
-                  <input type='file' className='file' name='file' />
-                </label>
-                <input className='button' type='reset' value='Limpar' />
-                <input className='button' type='submit' value='Enviar' />
-              </form>
-            </fieldset>
-            <hr />
-            <h2>Tabelas</h2>
-            <table cellSpacing='0' cellPadding='0'>
-              <tbody>
-                <tr>
-                  <th>Cabeçalho de tabela 1</th>
-                  <th>Cabeçalho de tabela 2</th>
-                  <th>Cabeçalho de tabela 3</th>
-                </tr>
-                <tr>
-                  <td>Divisão 1</td>
-                  <td>Divisão 2</td>
-                  <td>Divisão 3</td>
-                </tr>
-                <tr>
-                  <td>Divisão 1</td>
-                  <td>Divisão 2</td>
-                  <td>Divisão 3</td>
-                </tr>
-                <tr>
-                  <td>Divisão 1</td>
-                  <td>Divisão 2</td>
-                  <td>Divisão 3</td>
-                </tr>
-              </tbody>
-            </table>
-            <hr />
-            <h2>Diversos – abbr, acronym, pre, code, sub, sup, etc.</h2>
-            <p>Lorem <sup>Sobrescrito</sup> dolor <sub>subscrito</sub> amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. <cite>Cidade</cite>. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. <acronym title='Escreva seu titulo aqui'>Titulo no Hover</acronym> Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.  <abbr title='Abreviatura'>Abreviatura</abbr></p>
-            <pre>
-              Aqui, você pode copiar um texto e estes espaço 
-              respeitará as quebras de linhas.
-              Lorem ipsum dolor sit amet,
-              consectetuer adipiscing elit.
-              Nullam dignissim convallis est.
-              Quisque aliquam. Donec faucibus. 
-              Nunc iaculis suscipit dui. 
-              Nam sit amet sem. 
-              Aliquam libero nisi, imperdiet at,
-              tincidunt nec, gravida vehicula,
-              nisl. 
-              Praesent mattis, massa quis 
-              luctus fermentum, turpis mi 
-              volutpat justo, eu volutpat 
-              enim diam eget metus. 
-              Maecenas ornare tortor. 
-              Donec sed tellus eget sapien
-              fringilla nonummy. 
-              <acronym title='National Basketball Association'>NBA</acronym> 
-              Mauris a ante. Suspendisse
-              quam sem, consequat at, 
-              commodo vitae, feugiat in, 
-              nunc. Morbi imperdiet augue
-              quis tellus.  
-              <abbr title='Avenue'>AVE</abbr>
-            </pre>
-            <blockquote>
-              Esta folha de estilo vai ajuda-lo muito, diria, muitíssimo!
-            </blockquote> 
-            <p>-Blockquote</p>
-          </article>
-        </section>
+const PTitle = styled.p`
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #666;
+  font-family: 'Julius Sans One', sans-serif;
+`
+const DivContainer = styled.div`
+  displa: block;
+  color: #666;
+  font-family: 'Julius Sans One', sans-serif;
+  width: 100%;
+
+    p {
+      font-size: 20px;
+    }
+`
+const BoxContainer = styled.div`
+  display: grid;
+  grid-gap: 20px;
+  margin: 30px 0;
+  text-align: center;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #61dafb;
+    border-radius: 10px;
+    padding: 30px 0;
+    color: #777;
+    font-family: 'Galada', cursive;
+    font-size: 20px;
+
+    span {
+      font-size: 80px;
+      display: block;
+      text-align: center;
+      color: #555555;
+    }
+
+    @media (max-width: 750px) {
+      font-size: 16px;
+
+      span {
+        font-size: 45px
+      }
+    }
+  }
+
+  @media (max-width: 550px) {
+    grid-template-columns: 100% !important;
+  }
+`
+
+const DEFAULT_DATE_VALUE = moment(new Date(2015, 9, 31, 18, 30))
+
+export default class Home extends Component {
+  constructor () {
+    super()
+
+    this.state = {
+      marriedDate: DEFAULT_DATE_VALUE,
+      d: '',
+      h: '',
+      m: '',
+      s: '',
+      Mo: '',
+      y: '',
+      currentWedding: '',
+      gotMarried: false,
+      date: '',
+      time: ''
+    }
+  }
+
+  componentDidMount () {
+    const {marriedDate} = this.state
+    const MD = moment(marriedDate)
+
+    this.getSplitedTime(MD)
+  }
+
+  getSplitedTime = MD => {
+    const DEY = MD.year(),
+      DEMo = MD.month(),
+      DED = MD.date(),
+      DEH = MD.hour(),
+      DEM = MD.minute()
+
+    this.setDiffTime(DEY, DEMo, DED, DEH, DEM, MD)
+  }
+
+  setWedding (y) {
+    const currentWedding = weddingList.find((wedding) => {
+      return wedding.id === y
+    })
+
+    const nextWedding = weddingList.find((wedding) => {
+      return wedding.id === y + 1
+    })
+
+    this.setState({
+      currentWedding: currentWedding.name,
+      nextWedding: nextWedding.name
+    })
+  }
+
+  setDiffTime (DEY, DEMo, DED, DEH, DEM, MD) {
+    let eventTime = moment(new Date(DEY, DEMo, DED, DEH, DEM)).unix(),
+      currentTime = moment().unix(),
+      diffTime = currentTime - eventTime,
+      hasWedding = true,
+      setMarried = true
+
+    if (diffTime <= 0) {
+      diffTime = eventTime - currentTime
+      hasWedding = false
+      setMarried = false
+    }
+
+    const duration = moment.duration(diffTime * 1000, 'milliseconds')
+
+    let y = moment.duration(duration).years()
+    y = y.length === 1 ? '0' + y : y
+
+    this.setState({ y, gotMarried: setMarried })
+    this.setCountdown(DEY, DEMo, DED, DEH, DEM, y, hasWedding, MD)
+    this.setWedding(y)
+  }
+
+  setCountdown (DEY, DEMo, DED, DEH, DEM, y, hasWedding, MD) {
+    let nextEvent = moment(new Date(DEY + y + 1, DEMo, DED, DEH, DEM)).unix()
+
+    if (!hasWedding) {
+      nextEvent = moment(MD).unix()
+    }
+
+    let currentTime = moment().unix(),
+      diffTime = nextEvent - currentTime,
+      duration = moment.duration(diffTime * 1000, 'milliseconds'),
+      interval = 1000
+
+    if(diffTime > 0) {
+      setInterval( () => {
+        duration = moment.duration(duration.asMilliseconds() - interval, 'milliseconds')
+        let d = moment.duration(duration).days(),
+          h = moment.duration(duration).hours(),
+          m = moment.duration(duration).minutes(),
+          s = moment.duration(duration).seconds(),
+          Mo = moment.duration(duration).months()
+
+          d = d.length === 1 ? '0' + d : d
+          h = h.length === 1 ? '0' + h : h
+          m = m.length === 1 ? '0' + m : m
+          s = s.length === 1 ? '0' + s : s
+          Mo = Mo.length === 1 ? '0' + Mo : Mo
+
+        if (s < 0) {
+          this.setState({
+            gotMarried: true,
+            marriedDate: moment(new Date())
+          })
+          document.location.reload()
+        }
+
+        this.setState({
+          d, h, m, s, Mo
+        })
+      }, interval)
+    }
+  }
+
+  gridCalc = (y, d, Mo) => {
+    let number = 6
+    if (y === 0) {
+      number = number - 1
+    }
+    if (Mo === 0) {
+      number = number - 1
+    }
+    if (d === 0) {
+      number = number - 1
+    }
+    if (this.state.gotMarried) {
+      number = number - 1
+    }
+
+    const percent = 100/number
+    const pixel = ((number - 1) * 20 / number)
+
+    let value = ''
+    for(let i = 0; i < number; i++) {
+      value = `${value} calc(${percent}% - ${pixel}px)` 
+    }
+
+    return value
+  }
+
+  onChangeInput = e => {
+    const {name, value} = e.target
+    this.setState({
+      [name]: value
+    })
+  }
+
+  onSubmitForm = e => {
+    e.preventDefault()
+    const {date, time} = this.state
+    const MD = moment(`${date} ${time}`)
+    this.setState({marriedDate: MD})
+    this.getSplitedTime(MD)
+  }
+
+  render () {
+    const {
+      marriedDate,
+      y, d, h, m, s, Mo,
+      currentWedding,
+      gotMarried,
+      nextWedding} = this.state
+    const gridCalc = this.gridCalc(y, d, Mo)
+    return (
+      <div className='squad home'>
+        <div className='explanation'>
+          <p>Olá visitante. Temos aqui um countdown que funciona da seguinte forma: Se colocar uma data anterior a de hoje, ele exibirá informações das Bodas de Matrimônio (mas só até 100 anos ahahaha). Ele vai começar a contar a partir da data e horário que foi informado, desde Bodas de Papel até Bodas de Jequitibá. Ao se passarem os anos, ele automaticamente alterará o valor, não precisando se preocupar em preencher nada além da data.</p>
+          <p>Caso a data seja futura ao dia de hoje, inicia-se uma contagem para o dia do casamento. O cronômetro chegando em 0, automaticamente altera para o setup explicado acima, contando as bodas.</p>
+
+          <p>Faça um teste, selecione uma data para seu evento!</p>
+          <form onSubmit={e => this.onSubmitForm(e)}>
+            <input type='date' name='date' onChange={e => this.onChangeInput(e)} />
+            <input type='time' name='time' onChange={e => this.onChangeInput(e)} />
+            <button type='submit'><i className="fas fa-search"></i></button>
+          </form>
+        </div>
+        {gotMarried ? (
+          <div>
+            <PTitle>Contagem Regressiva para as próximas bodas!</PTitle>
+            <DivContainer>
+              <p>Nosso casamento foi realizado em {marriedDate.format('DD/MM/YYYY')} às {marriedDate.format('H:mm')}</p>
+              <p>{y > 0 ? (
+                y > 1 ? `Se passaram ${y} anos` : `Se Passou 1 ano`
+              ) : 'Ainda não completamos um ano'}. Estamos em <b>{currentWedding}</b></p>
+            <p>Para comemorar {y <= 1 ? 'este primeiro ano' : `${y + 1} anos`} e as <b>{nextWedding}</b>, faltam... </p>
+              <BoxContainer  style={{gridTemplateColumns: gridCalc}}>
+                {Mo > 0 ? (<div><div><span>{Mo}</span> {Mo >= 2 ? 'meses' : 'mês'}</div></div>) : null}
+                {d > 0 ? (<div><div><span>{d}</span> {d >= 2 ? 'dias' : 'dia'}</div></div>) : null}
+                <div><div><span>{h}</span> {h >= 2 ? 'horas' : 'hora'}</div></div>
+                <div><div><span>{m}</span> {m >= 2 ? 'minutos' : 'minuto'}</div></div>
+                <div><div><span>{s}</span> {s >= 2 ? 'segundos' : 'segundo'}</div></div>
+              </BoxContainer>
+            </DivContainer>
+          </div>
+        ) : (
+          <div>
+            <PTitle>Contagem Regressiva para nosso casamento!</PTitle>
+            <DivContainer>
+              <p>Nosso casamento será no dia <b>{marriedDate.format('DD/MM/YYYY')}</b> às <b>{marriedDate.format('H:mm')}</b> na <b>Igreja de São José do Ipiranga</b>. Agora, faltam ...</p>
+              <BoxContainer  style={{gridTemplateColumns: gridCalc}}>
+                {y > 0 ? (<div><div><span>{y}</span> {y >= 2 ? 'anos' : 'ano'}</div></div>) : null}
+                {Mo > 0 ? (<div><div><span>{Mo}</span> {Mo >= 2 ? 'meses' : 'mês'}</div></div>) : null}
+                {d > 0 ? (<div><div><span>{d}</span> {d >= 2 ? 'dias' : 'dia'}</div></div>) : null}
+                <div><div><span>{h}</span> {h >= 2 ? 'horas' : 'hora'}</div></div>
+                <div><div><span>{m}</span> {m >= 2 ? 'minutos' : 'minuto'}</div></div>
+                <div><div><span>{s}</span> {s >= 2 ? 'segundos' : 'segundo'}</div></div>
+              </BoxContainer>
+            </DivContainer>
+          </div>
+        )}
       </div>
-    </div>
-  )
+    )
+  }
 }
-
-export default Home

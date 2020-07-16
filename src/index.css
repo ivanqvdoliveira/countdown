@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700');
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Modak&display=swap');
+
 :root {
   --color-default-222: #222;
   --color-default-333: #333;
@@ -72,8 +74,6 @@ html body label, html body button, html body input[type="submit"] {
 
 html body a, html body a:visited, html body a:active, html body a:focus {
       text-decoration: none;
-      color:#333;
-      color:var(--color-default-333);
       outline:none;
     }
 
@@ -529,6 +529,7 @@ html body .format-style article strong {
 
 .App {
   text-align: center;
+  margin-bottom: 100px;
 }
 
 .App-logo {
@@ -540,14 +541,35 @@ html body .format-style article strong {
 .App-header {
       background-color: #222;
       background-color: var(--color-default-222);
-      height: 150px;
+      height: 200px;
       padding: 20px;
       color: white;
     }
 
 .App-title {
       font-size: 1.5em;
+      color: #61dafb;
     }
+
+.App div {
+      margin-top:  10px;
+    }
+
+.App div .logo-ivan {
+        max-height: 30px;
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+.App div a {
+        color: #757575;
+        font-family: 'Fredoka One', cursive;
+        font-size: 35px;
+      }
+
+.App div a:hover {
+          color: #f6eb24;
+        }
 
 .App-intro {
       font-size: large; 
@@ -574,7 +596,7 @@ nav ul li {
 
 nav ul li a {
         background-color: #222;
-        color: #eee !important;
+        color: #eee;
         display: block;
         width: 100%;
         height: 100%;
@@ -665,6 +687,27 @@ form input {
         grid-column-end: 4;
       }
 
+.home .explanation {
+    margin-bottom: 30px;
+  }
+
+.home .explanation p {
+      margin-bottom: 10px;
+    }
+
+.home form input {
+      width: calc( 50% - 40px);
+      margin-right: 10px;
+    }
+
+.home form button {
+      width: 60px;
+      display: inline-block;
+      height: 36px;
+      border: none;
+      background-color: #61dafb;
+    }
+
 .modal {
   display: block;
   position: fixed;
@@ -706,3 +749,4 @@ form input {
       margin-bottom: 20px;
       padding-bottom: 20px;
     }
+

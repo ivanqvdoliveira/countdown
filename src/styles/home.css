@@ -1,0 +1,26 @@
+.home {
+  .explanation {
+    margin-bottom: 30px;
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+
+  form {
+
+    input {
+      width: calc( 50% - 40px);
+      margin-right: 10px;
+    }
+
+    button {
+      width: 60px;
+      display: inline-block;
+      height: 36px;
+      border: none;
+      background-color: #61dafb;
+    }
+  }
+}
