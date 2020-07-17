@@ -1,7 +1,7 @@
 
 :root {
   --color-default-countdown: #61dafb;
-  --color-default-countdown-2: #f2fb61;
+  --color-default-countdown-2: #efb921;
 }
 
 
@@ -31,10 +31,9 @@
       font-family: 'Sacramento', cursive;
       font-weight: 100;
       font-size: 56px;
-      color: var(--color-default-countdown);
 
       &-dois {
-        font-size: 23px;
+        font-size: 26px;
         color: #333;
         font-weight: 600;
         margin-top: 0;
@@ -43,17 +42,6 @@
     }
   }
 
-  &.to-get-married {
-
-    & > div {
-      .destaque {
-        color: var(--color-default-countdown-2);
-      }
-    }
-    DivContainer {display: none}
-  }
-
-
   form {
     margin: 20px 0 0;
 
@@ -61,21 +49,6 @@
       width: calc( 50% - 40px);
       margin-right: 10px;
       margin-bottom: 0;
-    }
-
-    button {
-      width: 60px;
-      display: inline-block;
-      height: 36px;
-      border: 1px solid #eee;
-      vertical-align: top;
-      outline: none;
-      background-color: var(--color-default-countdown);
-
-      &:hover {
-        box-shadow: 0 0 100px rgba(0, 0, 0, .4) inset;
-        color: #eee;
-      }
     }
   }
 }

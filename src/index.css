@@ -688,7 +688,7 @@ form input {
 
 :root {
   --color-default-countdown: #61dafb;
-  --color-default-countdown-2: #f2fb61;
+  --color-default-countdown-2: #efb921;
 }
 
 .home .explanation {
@@ -722,8 +722,6 @@ form input {
       font-family: 'Sacramento', cursive;
       font-weight: 100;
       font-size: 56px;
-      color: #61dafb;
-      color: var(--color-default-countdown);
     }
 
 .home > div .destaque-dois {
@@ -734,13 +732,6 @@ form input {
         margin-bottom: 0;
       }
 
-.home.to-get-married > div .destaque {
-        color: #f2fb61;
-        color: var(--color-default-countdown-2);
-      }
-
-.home.to-get-married DivContainer {display: none}
-
 .home form {
     margin: 20px 0 0;
   }
@@ -750,22 +741,6 @@ form input {
       margin-right: 10px;
       margin-bottom: 0;
     }
-
-.home form button {
-      width: 60px;
-      display: inline-block;
-      height: 36px;
-      border: 1px solid #eee;
-      vertical-align: top;
-      outline: none;
-      background-color: #61dafb;
-      background-color: var(--color-default-countdown);
-    }
-
-.home form button:hover {
-        box-shadow: 0 0 100px rgba(0, 0, 0, .4) inset;
-        color: #eee;
-      }
 
 .modal {
   display: block;

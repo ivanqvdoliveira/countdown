@@ -9,6 +9,21 @@ const PTitle = styled.p`
   color: #333;
   font-family: 'Swanky and Moo Moo', cursive;
 `
+
+const SearchButton = styled.button`
+  width: 60px;
+  display: inline-block;
+  height: 36px;
+  border: 1px solid #eee;
+  vertical-align: top;
+  outline: none;
+  background-color: var(${props => props.styledTheme.color});
+
+  &:hover {
+    box-shadow: 0 0 100px rgba(0, 0, 0, .4) inset;
+    color: #eee;
+  }
+`
 const DivContainer = styled.div`
   displa: block;
   color: #333;
@@ -253,29 +268,29 @@ export default class Home extends Component {
     const gridCalc = this.gridCalc(y, d, Mo)
     return (
       marriedDate && (
-        <div className='home to-get-married'>
+        <div className='home'>
           <div className='explanation'>
             <div className='squad home'>
-              <p>Olá visitante. Temos aqui um countdown que funciona da seguinte forma: Se colocar uma data anterior a de hoje, ele exibirá informações das Bodas de Matrimônio (mas só até 100 anos ahahaha). Ele vai começar a contar a partir da data e horário que foi informado, desde Bodas de Papel até Bodas de Jequitibá. Ao se passarem os anos, ele automaticamente alterará o valor, não precisando se preocupar em preencher nada além da data.</p>
+              <p>Olá visitante. Tenho aqui um contador que funciona da seguinte forma: Se colocar uma data anterior a de hoje, ele exibirá informações das Bodas de Matrimônio (mas só até 100 anos ahahaha). Ele vai começar a contar a partir da data e horário que foi informado, desde Bodas de Papel até Bodas de Jequitibá. Ao se passarem os anos, ele automaticamente alterará o valor, não precisando se preocupar em preencher nada além da data.</p>
               <p>Caso a data seja futura ao dia de hoje, inicia-se uma contagem para o dia do casamento. O cronômetro chegando em 0, automaticamente altera para o setup explicado acima, contando as bodas.</p>
 
               <p>Faça um teste, selecione uma data para seu evento!</p>
               <form onSubmit={e => this.onSubmitForm(e)}>
                 <input type='date' name='date' onChange={e => this.onChangeInput(e)} />
                 <input type='time' name='time' onChange={e => this.onChangeInput(e)} />
-                <button type='submit'><i className="fas fa-search"></i></button>
+                <SearchButton styledTheme={styledTheme} type='submit'><i className="fas fa-search"></i></SearchButton>
               </form>
             </div>
           </div>
           <div className='squad'>
             {gotMarried ? (
               <div>
-                <PTitle>Contagem Regressiva para as próximas bodas!</PTitle>
+                <PTitle>Contagem Regressiva para as <span style={{color: `var(${styledTheme.color})`}}>próximas bodas!</span></PTitle>
                 <DivContainer>
                   <p>Nosso casamento foi realizado em <b>{marriedDate.format('DD/MM/YYYY')}</b> às <b>{marriedDate.format('H:mm')}</b>. {y > 0 ? (
                     y > 1 ? `Se passaram ${y} anos` : `Se Passou 1 ano`
                   ) : 'Ainda não completamos um ano'} desde então.</p>
-                  <p>Estamos em <span className='destaque'>{currentWedding}</span></p>
+                  <p>Estamos em <span className='destaque' style={{color: `var(${styledTheme.color})`}}>{currentWedding}</span></p>
                 <p>Para comemorar {y <= 1 ? 'este primeiro ano' : `${y + 1} anos`} e as <span className='destaque destaque-dois'>{nextWedding}</span>, faltam... </p>
                   <BoxContainer styledTheme={styledTheme} style={{gridTemplateColumns: gridCalc}}>
                     {Mo > 0 ? (<div><div><span>{Mo}</span> {Mo >= 2 ? 'meses' : 'mês'}</div></div>) : null}
@@ -288,9 +303,10 @@ export default class Home extends Component {
               </div>
             ) : (
               <div>
-                <PTitle>Contagem Regressiva para nosso casamento!</PTitle>
+                <PTitle>Contagem Regressiva para <span style={{color: `var(${styledTheme.color})`}}>nosso casamento!</span></PTitle>
                 <DivContainer>
-                  <p>Nosso casamento será no dia <b>{marriedDate.format('DD/MM/YYYY')}</b> às <b>{marriedDate.format('H:mm')}</b> na <b>Igreja de São José do Ipiranga</b>. Agora, faltam ...</p>
+                  <p>Nosso casamento será no dia <span className='destaque destaque-dois'>{marriedDate.format('DD/MM/YYYY')}</span> às <span className='destaque destaque-dois'>{marriedDate.format('H:mm')}</span> na <span className='destaque' style={{color: `var(${styledTheme.color})`}}>Igreja Brasil no Ibirapuera</span>.</p>
+                  <p>Agora, faltam ...</p>
                   <BoxContainer styledTheme={styledTheme} style={{gridTemplateColumns: gridCalc}}>
                     {y > 0 ? (<div><div><span>{y}</span> {y >= 2 ? 'anos' : 'ano'}</div></div>) : null}
                     {Mo > 0 ? (<div><div><span>{Mo}</span> {Mo >= 2 ? 'meses' : 'mês'}</div></div>) : null}
