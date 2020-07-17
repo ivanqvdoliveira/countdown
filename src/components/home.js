@@ -4,19 +4,20 @@ import weddingList from './utils/weddingList'
 import styled from 'styled-components'
 
 const PTitle = styled.p`
-  font-size: 26px;
+  font-size: 36px;
   margin-bottom: 20px;
-  color: #666;
-  font-family: 'Julius Sans One', sans-serif;
+  color: #333;
+  font-family: 'Swanky and Moo Moo', cursive;
 `
 const DivContainer = styled.div`
   displa: block;
-  color: #666;
-  font-family: 'Julius Sans One', sans-serif;
+  color: #333;
+  font-size: 23px;
+  font-family: 'Swanky and Moo Moo', cursive;
   width: 100%;
 
     p {
-      font-size: 20px;
+      font-size: 25px;
     }
 `
 const BoxContainer = styled.div`
@@ -29,7 +30,7 @@ const BoxContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #61dafb;
+    background-color: var(${props => props.styledTheme.color});
     border-radius: 10px;
     padding: 30px 0;
     color: #777;
@@ -44,10 +45,10 @@ const BoxContainer = styled.div`
     }
 
     @media (max-width: 750px) {
-      font-size: 16px;
+      font-size: 32px;
 
       span {
-        font-size: 45px
+        font-size: 65px
       }
     }
   }
@@ -55,7 +56,17 @@ const BoxContainer = styled.div`
   @media (max-width: 550px) {
     grid-template-columns: 100% !important;
   }
+
+  &.to-get-married {
+    & > div {
+      background-color: var(--color-default-countdown-2);
+    }
+  }
 `
+
+let styledTheme = {
+  color: '--color-default-countdown'
+}
 
 const DEFAULT_DATE_VALUE = moment(new Date(2015, 9, 31, 18, 30))
 
@@ -64,7 +75,7 @@ export default class Home extends Component {
     super()
 
     this.state = {
-      marriedDate: DEFAULT_DATE_VALUE,
+      marriedDate: '',
       d: '',
       h: '',
       m: '',
@@ -73,14 +84,18 @@ export default class Home extends Component {
       y: '',
       currentWedding: '',
       gotMarried: false,
-      date: '',
-      time: ''
+      date: null,
+      time: null
     }
+
+    this.interval = null
   }
 
   componentDidMount () {
-    const {marriedDate} = this.state
-    const MD = moment(marriedDate)
+    const MD = moment(DEFAULT_DATE_VALUE)
+    this.setState({
+      marriedDate: DEFAULT_DATE_VALUE
+    })
 
     this.getSplitedTime(MD)
   }
@@ -116,11 +131,17 @@ export default class Home extends Component {
       diffTime = currentTime - eventTime,
       hasWedding = true,
       setMarried = true
+    styledTheme = {
+      color: '--color-default-countdown'
+    }
 
     if (diffTime <= 0) {
       diffTime = eventTime - currentTime
       hasWedding = false
       setMarried = false
+      styledTheme = {
+        color: '--color-default-countdown-2'
+      }
     }
 
     const duration = moment.duration(diffTime * 1000, 'milliseconds')
@@ -145,8 +166,10 @@ export default class Home extends Component {
       duration = moment.duration(diffTime * 1000, 'milliseconds'),
       interval = 1000
 
-    if(diffTime > 0) {
-      setInterval( () => {
+    clearInterval(this.interval)
+
+    if (diffTime > 0) {
+      this.interval = setInterval( () => {
         duration = moment.duration(duration.asMilliseconds() - interval, 'milliseconds')
         let d = moment.duration(duration).days(),
           h = moment.duration(duration).hours(),
@@ -165,7 +188,7 @@ export default class Home extends Component {
             gotMarried: true,
             marriedDate: moment(new Date())
           })
-          document.location.reload()
+          this.getSplitedTime(moment(new Date()))
         }
 
         this.setState({
@@ -177,6 +200,7 @@ export default class Home extends Component {
 
   gridCalc = (y, d, Mo) => {
     let number = 6
+
     if (y === 0) {
       number = number - 1
     }
@@ -186,7 +210,7 @@ export default class Home extends Component {
     if (d === 0) {
       number = number - 1
     }
-    if (this.state.gotMarried) {
+    if (y >= 1 && this.state.gotMarried) {
       number = number - 1
     }
 
@@ -211,6 +235,9 @@ export default class Home extends Component {
   onSubmitForm = e => {
     e.preventDefault()
     const {date, time} = this.state
+    if (!date || !time) {
+      return
+    }
     const MD = moment(`${date} ${time}`)
     this.setState({marriedDate: MD})
     this.getSplitedTime(MD)
@@ -225,53 +252,59 @@ export default class Home extends Component {
       nextWedding} = this.state
     const gridCalc = this.gridCalc(y, d, Mo)
     return (
-      <div className='squad home'>
-        <div className='explanation'>
-          <p>Olá visitante. Temos aqui um countdown que funciona da seguinte forma: Se colocar uma data anterior a de hoje, ele exibirá informações das Bodas de Matrimônio (mas só até 100 anos ahahaha). Ele vai começar a contar a partir da data e horário que foi informado, desde Bodas de Papel até Bodas de Jequitibá. Ao se passarem os anos, ele automaticamente alterará o valor, não precisando se preocupar em preencher nada além da data.</p>
-          <p>Caso a data seja futura ao dia de hoje, inicia-se uma contagem para o dia do casamento. O cronômetro chegando em 0, automaticamente altera para o setup explicado acima, contando as bodas.</p>
+      marriedDate && (
+        <div className='home to-get-married'>
+          <div className='explanation'>
+            <div className='squad home'>
+              <p>Olá visitante. Temos aqui um countdown que funciona da seguinte forma: Se colocar uma data anterior a de hoje, ele exibirá informações das Bodas de Matrimônio (mas só até 100 anos ahahaha). Ele vai começar a contar a partir da data e horário que foi informado, desde Bodas de Papel até Bodas de Jequitibá. Ao se passarem os anos, ele automaticamente alterará o valor, não precisando se preocupar em preencher nada além da data.</p>
+              <p>Caso a data seja futura ao dia de hoje, inicia-se uma contagem para o dia do casamento. O cronômetro chegando em 0, automaticamente altera para o setup explicado acima, contando as bodas.</p>
 
-          <p>Faça um teste, selecione uma data para seu evento!</p>
-          <form onSubmit={e => this.onSubmitForm(e)}>
-            <input type='date' name='date' onChange={e => this.onChangeInput(e)} />
-            <input type='time' name='time' onChange={e => this.onChangeInput(e)} />
-            <button type='submit'><i className="fas fa-search"></i></button>
-          </form>
+              <p>Faça um teste, selecione uma data para seu evento!</p>
+              <form onSubmit={e => this.onSubmitForm(e)}>
+                <input type='date' name='date' onChange={e => this.onChangeInput(e)} />
+                <input type='time' name='time' onChange={e => this.onChangeInput(e)} />
+                <button type='submit'><i className="fas fa-search"></i></button>
+              </form>
+            </div>
+          </div>
+          <div className='squad'>
+            {gotMarried ? (
+              <div>
+                <PTitle>Contagem Regressiva para as próximas bodas!</PTitle>
+                <DivContainer>
+                  <p>Nosso casamento foi realizado em <b>{marriedDate.format('DD/MM/YYYY')}</b> às <b>{marriedDate.format('H:mm')}</b>. {y > 0 ? (
+                    y > 1 ? `Se passaram ${y} anos` : `Se Passou 1 ano`
+                  ) : 'Ainda não completamos um ano'} desde então.</p>
+                  <p>Estamos em <span className='destaque'>{currentWedding}</span></p>
+                <p>Para comemorar {y <= 1 ? 'este primeiro ano' : `${y + 1} anos`} e as <span className='destaque destaque-dois'>{nextWedding}</span>, faltam... </p>
+                  <BoxContainer styledTheme={styledTheme} style={{gridTemplateColumns: gridCalc}}>
+                    {Mo > 0 ? (<div><div><span>{Mo}</span> {Mo >= 2 ? 'meses' : 'mês'}</div></div>) : null}
+                    {d > 0 ? (<div><div><span>{d}</span> {d >= 2 ? 'dias' : 'dia'}</div></div>) : null}
+                    <div><div><span>{h}</span> {h >= 2 ? 'horas' : 'hora'}</div></div>
+                    <div><div><span>{m}</span> {m >= 2 ? 'minutos' : 'minuto'}</div></div>
+                    <div><div><span>{s}</span> {s >= 2 ? 'segundos' : 'segundo'}</div></div>
+                  </BoxContainer>
+                </DivContainer>
+              </div>
+            ) : (
+              <div>
+                <PTitle>Contagem Regressiva para nosso casamento!</PTitle>
+                <DivContainer>
+                  <p>Nosso casamento será no dia <b>{marriedDate.format('DD/MM/YYYY')}</b> às <b>{marriedDate.format('H:mm')}</b> na <b>Igreja de São José do Ipiranga</b>. Agora, faltam ...</p>
+                  <BoxContainer styledTheme={styledTheme} style={{gridTemplateColumns: gridCalc}}>
+                    {y > 0 ? (<div><div><span>{y}</span> {y >= 2 ? 'anos' : 'ano'}</div></div>) : null}
+                    {Mo > 0 ? (<div><div><span>{Mo}</span> {Mo >= 2 ? 'meses' : 'mês'}</div></div>) : null}
+                    {d > 0 ? (<div><div><span>{d}</span> {d >= 2 ? 'dias' : 'dia'}</div></div>) : null}
+                    <div><div><span>{h}</span> {h >= 2 ? 'horas' : 'hora'}</div></div>
+                    <div><div><span>{m}</span> {m >= 2 ? 'minutos' : 'minuto'}</div></div>
+                    <div><div><span>{s}</span> {s >= 2 ? 'segundos' : 'segundo'}</div></div>
+                  </BoxContainer>
+                </DivContainer>
+              </div>
+            )}
+          </div>
         </div>
-        {gotMarried ? (
-          <div>
-            <PTitle>Contagem Regressiva para as próximas bodas!</PTitle>
-            <DivContainer>
-              <p>Nosso casamento foi realizado em {marriedDate.format('DD/MM/YYYY')} às {marriedDate.format('H:mm')}</p>
-              <p>{y > 0 ? (
-                y > 1 ? `Se passaram ${y} anos` : `Se Passou 1 ano`
-              ) : 'Ainda não completamos um ano'}. Estamos em <b>{currentWedding}</b></p>
-            <p>Para comemorar {y <= 1 ? 'este primeiro ano' : `${y + 1} anos`} e as <b>{nextWedding}</b>, faltam... </p>
-              <BoxContainer  style={{gridTemplateColumns: gridCalc}}>
-                {Mo > 0 ? (<div><div><span>{Mo}</span> {Mo >= 2 ? 'meses' : 'mês'}</div></div>) : null}
-                {d > 0 ? (<div><div><span>{d}</span> {d >= 2 ? 'dias' : 'dia'}</div></div>) : null}
-                <div><div><span>{h}</span> {h >= 2 ? 'horas' : 'hora'}</div></div>
-                <div><div><span>{m}</span> {m >= 2 ? 'minutos' : 'minuto'}</div></div>
-                <div><div><span>{s}</span> {s >= 2 ? 'segundos' : 'segundo'}</div></div>
-              </BoxContainer>
-            </DivContainer>
-          </div>
-        ) : (
-          <div>
-            <PTitle>Contagem Regressiva para nosso casamento!</PTitle>
-            <DivContainer>
-              <p>Nosso casamento será no dia <b>{marriedDate.format('DD/MM/YYYY')}</b> às <b>{marriedDate.format('H:mm')}</b> na <b>Igreja de São José do Ipiranga</b>. Agora, faltam ...</p>
-              <BoxContainer  style={{gridTemplateColumns: gridCalc}}>
-                {y > 0 ? (<div><div><span>{y}</span> {y >= 2 ? 'anos' : 'ano'}</div></div>) : null}
-                {Mo > 0 ? (<div><div><span>{Mo}</span> {Mo >= 2 ? 'meses' : 'mês'}</div></div>) : null}
-                {d > 0 ? (<div><div><span>{d}</span> {d >= 2 ? 'dias' : 'dia'}</div></div>) : null}
-                <div><div><span>{h}</span> {h >= 2 ? 'horas' : 'hora'}</div></div>
-                <div><div><span>{m}</span> {m >= 2 ? 'minutos' : 'minuto'}</div></div>
-                <div><div><span>{s}</span> {s >= 2 ? 'segundos' : 'segundo'}</div></div>
-              </BoxContainer>
-            </DivContainer>
-          </div>
-        )}
-      </div>
+      )
     )
   }
 }

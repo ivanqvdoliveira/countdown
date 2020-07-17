@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700');
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Modak&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Swanky+and+Moo+Moo&Fredoka+One&family=Modak&display=swap');
 
 :root {
   --color-default-222: #222;
@@ -529,7 +529,6 @@ html body .format-style article strong {
 
 .App {
   text-align: center;
-  margin-bottom: 100px;
 }
 
 .App-logo {
@@ -687,26 +686,86 @@ form input {
         grid-column-end: 4;
       }
 
+:root {
+  --color-default-countdown: #61dafb;
+  --color-default-countdown-2: #f2fb61;
+}
+
 .home .explanation {
+    background-color: #eee;
     margin-bottom: 30px;
+    padding: 30px 0;
   }
 
 .home .explanation p {
       margin-bottom: 10px;
+      font-size: 14px;
     }
+
+@media (max-width: 820px) {
+
+.home .explanation {
+      padding: 30px 10px
+  }
+    }
+
+@media (max-width: 820px) {
+
+.home > div {
+      padding: 0 10px
+  }
+    }
+
+.home > div .destaque {
+      margin: 30px 0;
+      display: inline-block;
+      font-family: 'Sacramento', cursive;
+      font-weight: 100;
+      font-size: 56px;
+      color: #61dafb;
+      color: var(--color-default-countdown);
+    }
+
+.home > div .destaque-dois {
+        font-size: 23px;
+        color: #333;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+.home.to-get-married > div .destaque {
+        color: #f2fb61;
+        color: var(--color-default-countdown-2);
+      }
+
+.home.to-get-married DivContainer {display: none}
+
+.home form {
+    margin: 20px 0 0;
+  }
 
 .home form input {
       width: calc( 50% - 40px);
       margin-right: 10px;
+      margin-bottom: 0;
     }
 
 .home form button {
       width: 60px;
       display: inline-block;
       height: 36px;
-      border: none;
+      border: 1px solid #eee;
+      vertical-align: top;
+      outline: none;
       background-color: #61dafb;
+      background-color: var(--color-default-countdown);
     }
+
+.home form button:hover {
+        box-shadow: 0 0 100px rgba(0, 0, 0, .4) inset;
+        color: #eee;
+      }
 
 .modal {
   display: block;
@@ -749,4 +808,3 @@ form input {
       margin-bottom: 20px;
       padding-bottom: 20px;
     }
-
