@@ -1,3 +1,6 @@
 @import 'Reset.css';
 @import 'custom.css';
+@import 'home.css';
 @import './molecule/modal.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Swanky+and+Moo+Moo&Fredoka+One&family=Modak&display=swap');
